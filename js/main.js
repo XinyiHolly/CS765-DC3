@@ -1,10 +1,12 @@
-var path = '/data/';
+var path = '';
 var dataFile;
 
 var tree;
 var metaList = [];
 const productSet = new Set([]);
 var targetProduct;
+var reviewList = [];
+var rlvtProductList = [];
 
 reDraw();
 
@@ -15,6 +17,27 @@ function reDraw() {
   initVis();
   initSearch();
   // visLegend();
+}
+
+function reDrawPdtTree() {
+  targetProduct = document.getElementById("targetproduct").value;
+  reviewList = getReviews(targetProduct);
+}
+
+function getReviews(name) {
+  d3.csv(path.concat(dataFile).concat("-ratings.csv"), function(data) {  
+    if (data.title === targetProduct) {
+      reviewList.push({"reviewer" : data.reviewerID, "rating" : data.overall});
+    }
+  })
+  setTimeout(function(){
+    console.log(productSet.size);
+    // console.log(productSet[['Entries']]);
+    const array = Array.from(productSet);
+    // console.log(productSet); 
+    // console.log(array); 
+    autocomplete(document.getElementById("targetproduct"), array);  
+  }, 800);
 }
 
 function clearVis() {
@@ -56,9 +79,6 @@ function initSearch() {
     // console.log(array); 
     autocomplete(document.getElementById("targetproduct"), array);  
   }, 800);
-  // setTimeout(function(){
-  //   createZoomableCircle((tree[0].children)[0]);
-  // }, 1000 );
 }
 
 function initVis() {
