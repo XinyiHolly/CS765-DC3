@@ -1,0 +1,2 @@
+id,name,productCount,subtreeProductCount,parent,numChildren,pathName,children,alsoCount,also
+0,root,0,0,0,0,[],[],0,[]

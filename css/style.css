@@ -1,0 +1,26 @@
+/* Stylesheet by Xinyi Liu, 2017*/
+
+#datasize {
+    width: 90px;
+}
+
+#reviewerid {
+    width: 90px;
+}
+
+#reviewernum {
+    width: 90px;
+}
+
+#setting {
+    margin-top: 5px;
+}
+
+#vis {
+    margin-top: 20px;
+}
+
+#my_dataviz .legend rect {
+    stroke: #333;
+    stroke-width: 0.5px;
+}

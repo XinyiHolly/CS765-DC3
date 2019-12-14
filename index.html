@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>
+			Category Tree
+		</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+		<!--put your external stylesheet links here-->
+		<link rel="stylesheet" href="css/style.css">
+		<!--[if IE<9]>
+			<link rel="stylesheet" href="css/style.ie.css">
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  			<h1 class="display-4">Amazon Products</h1>
+  			<p class="lead">Select the target product name to see its information and other relevant <!-- top <span style="font-weight: bold; font-style: italic; color: #625c6b">N</span> --> products which are bought together</p>
+		</div>
+		<div class="container">
+		  <div class="row" id="setting">
+		  	<div class="col-lg-3">
+		  		<div class="input-group mb-3">
+		  		  <div class="input-group-prepend">
+    		      	<label class="input-group-text" for="datasize">Data Set</label>
+  			      </div>
+				  <select class="custom-select" id="datasize" onchange="reDraw()">
+				    <option value="MoviesTV-noalsos-nodes" selected>Movies & TV</option>
+				    <option value="Beauty-noalsos-nodes">Beauty</option>
+				    <option value="PetSupplies-noalsos-nodes">Pet Supplies</option>
+				  </select>
+				</div>
+			</div>
+			<div class="col-lg-9">
+				<div class="input-group mb-3">
+				  <form autocomplete="off" action="/action_page.php">
+				  	<div class="input-group-prepend">
+    		      	  <label class="input-group-text" for="reviewerid">Target Product</label>
+    		      	  <div class="autocomplete" style="width:300px;">
+					    <input id="myInput" type="text" name="myCountry" placeholder="Country">
+					    <input type="submit">
+					  </div>
+  			      	</div>  	
+				  </form>
+				</div>
+			</div>
+			<!-- <div class="col-lg-3">
+				<div class="input-group mb-3" id="reviewersbundle">
+				  <div class="input-group-prepend">
+    		      	<label class="input-group-text" for="reviewernum"><span style="font-style: italic; color: #0c011c">N</span></label>
+  			      </div>
+				  <select class="custom-select" id="reviewernum" onchange="subRedraw2()">
+				  </select>
+				</div>
+			</div> -->
+		  </div>
+		  <div class="row" id="vis">
+		  	<div class="col-lg-12">
+		  		<!-- <div id="legend"></div> -->
+		  		<div id="my_dataviz"></div>
+		  	</div>
+		  </div>
+		</div>
+		<!--put your initial page content here-->
+
+		<!--you can also use this space for internal scripts or stylesheets;
+		place these within <script> or <style> tags-->
+
+		<!--put your external script links here-->
+		<script src="https://d3js.org/d3.v5.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
+
