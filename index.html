@@ -26,22 +26,22 @@
 		  	<div class="col-lg-3">
 		  		<div class="input-group mb-3">
 		  		  <div class="input-group-prepend">
-    		      	<label class="input-group-text" for="datasize">Data Set</label>
+    		      	<label class="input-group-text" for="dataset">Data Set</label>
   			      </div>
-				  <select class="custom-select" id="datasize" onchange="reDraw()">
-				    <option value="MoviesTV-noalsos-nodes" selected>Movies & TV</option>
-				    <option value="Beauty-noalsos-nodes">Beauty</option>
-				    <option value="PetSupplies-noalsos-nodes">Pet Supplies</option>
+				  <select class="custom-select" id="dataset" onchange="reDraw()">
+				    <option value="MoviesTV" selected>Movies & TV</option>
+				    <option value="LuxuryBeauty">Beauty</option>
+				    <option value="PetSupplies">Pet Supplies</option>
 				  </select>
 				</div>
 			</div>
 			<div class="col-lg-9">
 				<div class="input-group mb-3">
-				  <form autocomplete="off" action="/action_page.php">
+				  <form autocomplete="off" onsubmit="reDrawPdtTree()">
 				  	<div class="input-group-prepend">
-    		      	  <label class="input-group-text" for="reviewerid">Target Product</label>
+    		      	  <label class="input-group-text" for="targetproduct">Target Product</label>
     		      	  <div class="autocomplete" style="width:300px;">
-					    <input id="myInput" type="text" name="myCountry" placeholder="Country">
+					    <input id="targetproduct" type="text" name="myProduct" placeholder="Name">
 					    <input type="submit">
 					  </div>
   			      	</div>  	
@@ -59,9 +59,14 @@
 			</div> -->
 		  </div>
 		  <div class="row" id="vis">
-		  	<div class="col-lg-12">
+		  	<div class="col-lg-9">
 		  		<!-- <div id="legend"></div> -->
 		  		<div id="my_dataviz"></div>
+		  	</div>
+		  	<div class="col-lg-3">
+		  		<!-- <div id="legend"></div> -->
+		  		<div class="row" id="pdtree_viz"></div>
+		  		<div class="row" id="stats_viz"></div>
 		  	</div>
 		  </div>
 		</div>
