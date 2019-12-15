@@ -1,15 +1,18 @@
 /* Stylesheet by Xinyi Liu, 2017*/
 
 #dataset {
-    width: 90px;
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    height: 44.2px;
 }
 
 #targetproduct {
-    width: 90px;
+    width: 120px;
 }
 
-#reviewernum {
-    width: 90px;
+#stats_viz {
+    padding-left: 10px
 }
 
 #setting {
@@ -70,3 +73,4 @@ input[type=submit] {
   background-color: DodgerBlue !important;
   color: #ffffff;
 }
+

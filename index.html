@@ -8,6 +8,8 @@
 		</title>
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css">
 		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
 		<!--put your external stylesheet links here-->
 		<link rel="stylesheet" href="css/style.css">
@@ -23,21 +25,22 @@
 		</div>
 		<div class="container">
 		  <div class="row" id="setting">
-		  	<div class="col-lg-3">
+		  	<div class="col-lg-4">
 		  		<div class="input-group mb-3">
 		  		  <div class="input-group-prepend">
     		      	<label class="input-group-text" for="dataset">Data Set</label>
+    		      	<select class="custom-select" id="dataset" onchange="reDraw()">
+					  <option value="MoviesTV" selected>Movies & TV</option>
+					  <option value="LuxuryBeauty">Beauty</option>
+					  <option value="PetSupplies">Pet Supplies</option>
+					</select>
   			      </div>
-				  <select class="custom-select" id="dataset" onchange="reDraw()">
-				    <option value="MoviesTV" selected>Movies & TV</option>
-				    <option value="LuxuryBeauty">Beauty</option>
-				    <option value="PetSupplies">Pet Supplies</option>
-				  </select>
 				</div>
 			</div>
-			<div class="col-lg-9">
+			<div class="col-lg-4">
 				<div class="input-group mb-3">
-				  <form autocomplete="off" onsubmit="reDrawPdtTree()">
+				  <!-- <form autocomplete="off" onsubmit="reDrawPdtTree()"> -->
+				  <form autocomplete="off" onsubmit="retrieveInfor()">
 				  	<div class="input-group-prepend">
     		      	  <label class="input-group-text" for="targetproduct">Target Product</label>
     		      	  <div class="autocomplete" style="width:300px;">
@@ -48,15 +51,14 @@
 				  </form>
 				</div>
 			</div>
-			<!-- <div class="col-lg-3">
+			<div class="col-lg-4">
 				<div class="input-group mb-3" id="reviewersbundle">
 				  <div class="input-group-prepend">
-    		      	<label class="input-group-text" for="reviewernum"><span style="font-style: italic; color: #0c011c">N</span></label>
+    		      	<label for="ex2">Category Size:</label>
   			      </div>
-				  <select class="custom-select" id="reviewernum" onchange="subRedraw2()">
-				  </select>
+				  10 <input id="ex2" type="text" class="span2" value="" data-slider-min="20" data-slider-max="50000" data-slider-step="5" data-slider-value="[250,450]"/> 60000	
 				</div>
-			</div> -->
+			</div>
 		  </div>
 		  <div class="row" id="vis">
 		  	<div class="col-lg-9">
@@ -65,8 +67,22 @@
 		  	</div>
 		  	<div class="col-lg-3">
 		  		<!-- <div id="legend"></div> -->
-		  		<div class="row" id="pdtree_viz"></div>
-		  		<div class="row" id="stats_viz"></div>
+		  		<div class="row" id="stats_viz">
+		  			<div class="thumbnail">
+				      <a href="https://i.jeded.com/i/star-trek-the-next-generation-fifth-season.28121.jpg">
+				        <img src="https://i.jeded.com/i/star-trek-the-next-generation-fifth-season.28121.jpg" alt="Lights" style="width:100%">
+				      </a>
+				      <ul class="list-group">
+					  	<li class="list-group-item">Category: Movies & TV -> Independently Distributed -> Drama</li>
+					  	<li class="list-group-item">Title: Stuck!</li>
+					  	<li class="list-group-item">Number of Reviewers: 4</li>
+					  	<li class="list-group-item">Average Rating: 3</li>
+					  </ul>
+				    </div>
+		  		</div>
+		  		<div class="row" id="pdtree_viz">
+				  <img src="tree.png" alt="Lights" style="width:100%">
+		  		</div>
 		  	</div>
 		  </div>
 		</div>
@@ -77,6 +93,7 @@
 
 		<!--put your external script links here-->
 		<script src="https://d3js.org/d3.v5.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
